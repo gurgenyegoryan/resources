@@ -1,4 +1,0 @@
-include:
-  - project: 'telecomproject/resources'
-    ref: loris
-    file: '/.gl-templates/microservices.gitlab-ci.yml'
