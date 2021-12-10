@@ -1,12 +1,4 @@
 include:
   - project: 'telecomproject/resources'
+    ref: loris
     file: '/.gl-templates/microservices.gitlab-ci.yml'
-
-build:
-  extends: .build
-
-push:
-  extends: .push-backup
-
-deploy:
-  extends: .deploy
