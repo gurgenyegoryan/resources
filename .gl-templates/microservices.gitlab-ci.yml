@@ -63,7 +63,7 @@ push:
 
 deploy:
   stage: deploy
-  image: 
+  image:
     name: $CI_REGISTRY/telecomproject/cluster/deptools:latest
   needs:
     - build
