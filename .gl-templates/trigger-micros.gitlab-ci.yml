@@ -1,0 +1,87 @@
+adservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/adservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+cartservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/cartservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+checkoutservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/checkoutservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+currencyservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/currencyservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+emailservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/emailservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+frontend-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/frontend
+    branch: $WORK_BRANCH
+    strategy: depend
+
+loadgenerator-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/loadgenerator
+    branch: $WORK_BRANCH
+    strategy: depend
+
+paymentservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/paymentservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+productcatalogservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/productcatalogservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+recommendationservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/recommendationservice
+    branch: $WORK_BRANCH
+    strategy: depend
+
+shippingservice-ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    project: telecomproject/shippingservice
+    branch: $WORK_BRANCH
+    strategy: depend

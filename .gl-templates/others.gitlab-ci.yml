@@ -1,0 +1,12 @@
+include:
+  - project: 'telecomproject/resources'
+    file: '/.gl-templates/microservices.gitlab-ci.yml'
+
+build:
+  extends: .build
+
+push:
+  extends: .push-backup
+
+deploy:
+  extends: .deploy
