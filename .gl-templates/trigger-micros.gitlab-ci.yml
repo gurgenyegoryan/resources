@@ -1,61 +1,87 @@
-.ci:
+adservice-ci:
   stage: build
   when: manual #testing
   trigger:
+    project: telecomproject/adservice
     branch: $WORK_BRANCH
     strategy: depend
 
-adservice-ci:
-  extends: .ci
-  trigger:
-    project: telecomproject/adservice
-
 cartservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/cartservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 checkoutservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/checkoutservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 currencyservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/currencyservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 emailservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/emailservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 frontend-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/frontend
+    branch: $WORK_BRANCH
+    strategy: depend
 
 loadgenerator-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/loadgenerator
+    branch: $WORK_BRANCH
+    strategy: depend
 
 paymentservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/paymentservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 productcatalogservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/productcatalogservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 recommendationservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/recommendationservice
+    branch: $WORK_BRANCH
+    strategy: depend
 
 shippingservice-ci:
-  extends: .ci
+  stage: build
+  when: manual #testing
   trigger:
     project: telecomproject/shippingservice
+    branch: $WORK_BRANCH
+    strategy: depend
