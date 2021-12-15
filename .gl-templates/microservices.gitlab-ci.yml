@@ -29,7 +29,7 @@ build:
     - export ECR_REGISTRY=`aws ecr describe-repositories --repository-names $CI_PROJECT_NAME --query repositories[].repositoryUri --output text` #get AWS repo uri
     - aws ecr get-login-password | docker login -u AWS --password-stdin $ECR_REGISTRY #docker login AWS repo
   script:
-    - docker build -t $ECR_REGISTRY:latest -t $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA . #build AWS:latest
+    - docker build -t $ECR_REGISTRY:latest -t $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA . #build AWS:latest and commit
     - docker push $ECR_REGISTRY #push AWS:latest and commit
   after_script:
     - docker save -o $CI_PROJECT_NAME.tar $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA #save the image
