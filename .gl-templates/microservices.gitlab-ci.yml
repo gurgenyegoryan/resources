@@ -30,7 +30,7 @@ build:
     - aws ecr get-login-password | docker login -u AWS --password-stdin $ECR_REGISTRY #docker login AWS repo
   script:
     - docker build -t $ECR_REGISTRY:latest -t $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA . #build AWS:latest and commit
-    - docker push $ECR_REGISTRY #push AWS:latest and commit
+    - docker push --all-tags $ECR_REGISTRY #push AWS:latest and commit
     - docker save -o $CI_PROJECT_NAME.tar $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA
   # after_script:
   #   - docker save -o $CI_PROJECT_NAME.tar $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA #save the image
@@ -57,7 +57,7 @@ push:
   script:
     - docker image tag $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE/$CI_PROJECT_NAME:latest #tag gitlab:latest
     - docker image tag $ECR_REGISTRY:$CI_COMMIT_SHORT_SHA $CI_REGISTRY_IMAGE/$CI_PROJECT_NAME:$CI_COMMIT_SHORT_SHA #tag gitlab:version
-    - docker push $CI_REGISTRY_IMAGE/$CI_PROJECT_NAME #push gitlab:latest and commit
+    - docker push --all-tags $CI_REGISTRY_IMAGE/$CI_PROJECT_NAME #push gitlab:latest and commit
 
 deploy:
   stage: deploy
