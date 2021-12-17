@@ -70,3 +70,5 @@ deploy:
     - aws eks update-kubeconfig --name $PROJECT_NAME --region $AWS_REGION #update kubeconfig
   script:
     - kubectl apply -f $CI_PROJECT_NAME-manifest.yaml #-l project=telecom-project
+    - kubectl rollout restart deployment $CI_PROJECT_NAME -n $NAMESPACE
+    - kubectl get ingress -n $NAMESPACE | awk 'NR==2 {print $4}'
