@@ -67,6 +67,6 @@ deploy:
     - build
   when: manual #testing
   before_script:
-    - aws eks update-kubeconfig --name $PROJECT_NAME --region $AWS_DEFAULT_REGION #update kubeconfig
+    - aws eks update-kubeconfig --name $PROJECT_NAME --region $AWS_REGION #update kubeconfig
   script:
-    - kubectl apply -f $CI_PROJECT_NAME-manifest.yaml -l project=telecom-project
+    - kubectl apply -f $CI_PROJECT_NAME-manifest.yaml #-l project=telecom-project
