@@ -1,0 +1,61 @@
+.ci:
+  stage: build
+  when: manual #testing
+  trigger:
+    branch: $WORK_BRANCH
+    strategy: depend
+
+adservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/adservice
+
+cartservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/cartservice
+
+checkoutservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/checkoutservice
+
+currencyservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/currencyservice
+
+emailservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/emailservice
+
+frontend-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/frontend
+
+loadgenerator-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/loadgenerator
+
+paymentservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/paymentservice
+
+productcatalogservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/productcatalogservice
+
+recommendationservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/recommendationservice
+
+shippingservice-ci:
+  extends: .ci
+  trigger:
+    project: telecomproject/shippingservice
