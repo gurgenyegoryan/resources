@@ -3,7 +3,6 @@ stages:
 
 build-image:
   stage: setup
-  # when: manual
   image: 
     name: docker:latest
   services:
