@@ -1,0 +1,14 @@
+stages:
+  - setup
+
+build-image:
+  stage: setup
+  # when: manual
+  image: 
+    name: docker:latest
+  services:
+    - docker:19-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $CI_REGISTRY_IMAGE/docker:latest -f Dockerfile_docker .
+    - docker push $CI_REGISTRY_IMAGE/docker:latest

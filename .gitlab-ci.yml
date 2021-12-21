@@ -1,0 +1,17 @@
+docker:
+  trigger:
+    include: docker.yml
+    strategy: depend
+  rules:
+    - changes:
+      - Dockerfile_docker
+      - docker.yml
+
+deptools:
+  trigger:
+    include: deptools.yml
+    strategy: depend
+  rules:
+    - changes:
+      - Dockerfile_deptools
+      - deptools.yml
