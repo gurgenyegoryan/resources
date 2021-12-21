@@ -1,8 +1,7 @@
 .ci:
   stage: build
-  when: manual #testing
   trigger:
-    branch: $WORK_BRANCH
+    branch: $CI_COMMIT_BRANCH
     strategy: depend
 
 adservice-ci:
