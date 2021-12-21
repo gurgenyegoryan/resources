@@ -88,3 +88,4 @@ deploy:
 #       - pip3 install jq yq
 #     script:
 #       - yq -r '.spec.template.spec.containers[]? | (select(.name=="$CI_PROJECT_NAME-container") |.image |= sub("latest"; "$CI_COMMIT_SHORT_SHA"))' *-manifest.yaml
+#       - kubectl rollout undo deploy $CI_PROJECT_NAME -n dev
