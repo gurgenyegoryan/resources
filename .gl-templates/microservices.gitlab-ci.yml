@@ -87,5 +87,5 @@ deploy:
 #     before_script:
 #       - pip3 install jq yq
 #     script:
-#       - yq -r '.spec.template.spec.containers[]? | (select(.name=="$CI_PROJECT_NAME-container") |.image |= sub("latest"; "$CI_COMMIT_SHORT_SHA"))' *-manifest.yaml
+#       - echo $(yq -r '.spec.template.spec.containers[]? | (select(.name=="$CI_PROJECT_NAME-container") |.image |= sub("latest"; "$CI_COMMIT_SHORT_SHA"))' *-manifest.yaml) > $CI_PROJECT_NAME-deployment.yaml
 #       - kubectl rollout undo deploy $CI_PROJECT_NAME -n dev
